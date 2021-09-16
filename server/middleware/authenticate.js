@@ -15,7 +15,6 @@ const authenticate = async (req, res, next) => {
     req.session = session;
     next();
   } catch (err) {
-    console.log("error", err.message)
     res.status(401).json({
       errors: [
         {

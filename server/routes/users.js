@@ -51,7 +51,6 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-  console.log("login request", req.body)
   try {
     const { email, password } = req.body;
     if (!isEmail(email)) {
@@ -127,7 +126,7 @@ router.get('/me', authenticate, async (req, res) => {
     res.status(401).json({
       errors: [
         {
-          title: 'Unauthorized',
+          title: 'token',
           detail: 'Not authorized to access this route',
           errorMessage: err.message,
         },
