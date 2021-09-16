@@ -33,9 +33,10 @@ router.post('/register', async (req, res) => {
       })
       .status(201)
       .json({
-        title: 'User Registration Successful',
+        isSuccess: true,
         detail: 'Successfully registered new user',
         csrfToken: session.csrfToken,
+        token: session.token,
       });
   } catch (err) {
     res.status(400).json({
